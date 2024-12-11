@@ -15,7 +15,7 @@ while True:
             offset = result['update_id']
 
             if 'photo' in result['message']:
-                file_id = result['message']['photo'][2]['file_id']
+                file_id = result['message']['photo'][-1]['file_id']
                 file_info = requests.get(f"{API_URL}{TOKEN}/getFile?file_id={file_id}").json()
                 file_path = file_info['result']['file_path']
                 response = requests.get(f"https://api.telegram.org/file/bot{TOKEN}/{file_path}")
