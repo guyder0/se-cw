@@ -29,5 +29,3 @@ def generate_monet():
     image = model(tensor).detach()
     image = bw_transform(image[0])
     image.save(OUTPUT_PTH)
-
-generate_monet()
